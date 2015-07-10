@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Encoder</title>
+    </head>
+    <body>
+        <script>
+            var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+            function encode(message){
+                var encodedMessage = "";
+                
+                message = message.split("");
+                
+                var i = 0;
+                while(i < message.length){
+                    var currLetter = message[i];
+                    var index = letters.indexOf(currLetter);
+                    if(index === -1){
+                        encodedMessage = encodedMessage + currLetter;
+                    } else {
+                        encodedMessage = encodedMessage + index;
+                    }
+                    i = i + 1;
+                }
+                
+                return encodedMessage;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magic 8 Ball</title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <style>
+            body {
+                background-color: lightSlateGray;
+                text-align: center;
+            }
+            
+            #question{
+                text-align: center;
+                font-size: 300%;
+                width: 600px;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="question">
+        <br>
+        <button id="shake">Shake!</button>
+        <br>
+        <div id="answer"></div>
+        <script>
+            $("#shake").on("click", function(){
+               var answers = [
+                       "Yes",
+                       "No",
+                       "Maybe So",
+                       "Might Be",
+                       "Try asking again"
+                   ];
+                   
+                var index = Math.floor(Math.random() * answers.length);
+                var answer = answers[index];
+               
+               $("#answer").text(answer);
+            });
+        </script>
+    </body>
+</html>
